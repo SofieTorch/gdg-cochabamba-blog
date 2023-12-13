@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+}
+
+.logo {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 1280px) {
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .menu {
+    font-size: 1rem;
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
+  .logo {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .link {
+    display: none;
+  }
+}

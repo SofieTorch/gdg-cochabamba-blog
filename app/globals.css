@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "google-sans";
+  src: url("../public/google-font/GoogleSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "google-sans-bold";
+  src: url("../public/google-font/GoogleSans-Bold.ttf");
+}
+
+.bg-yellow-pattern {
+  background-color: #f9ab00;
+  background-image: linear-gradient(white 0.125rem, transparent 0.125rem),
+    linear-gradient(90deg, white 0.125rem, transparent 0.125rem),
+    linear-gradient(90deg, white 0.125rem, transparent 0.125rem),
+    linear-gradient(white 0.125rem, transparent 0.125rem),
+    radial-gradient(circle, transparent 3rem, #f9ab00 3rem),
+    radial-gradient(circle, transparent 2.875rem, white 2.875rem);
+  background-size: 6rem 6rem;
+  background-position: 2.85rem 2.85rem, 2.85rem 2.85rem, 6rem 6rem, 6rem 6rem,
+    0 0, 0 0;
+}
+
+.btn-primary {
+  @apply bg-blue rounded-full px-4 py-2 text-white flex flex-row space-x-2 items-center;
+}
+
+/* .blog-post { */
+h1 {
+  @apply font-bold text-4xl;
+}
+
+h2 {
+  @apply font-semibold text-3xl;
+}
+
+h3 {
+  @apply font-semibold text-2xl;
+}
+
+h4 {
+  @apply font-semibold text-xl;
+}
+/* } */
+
+._contentEditable_utjas_351 {
+  @apply p-4 rounded-md;
+}
+
+/* :root {
+  --bg: #fff;
+  --textColor: #000;
+  --softBg: #f0f0f0;
+  --softTextColor: #626262;
+}
+
+.dark {
+  --bg: #0f172a;
+  --textColor: #ddd;
+  --softBg: #1f273a;
+  --softTextColor: #a6a6a6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--textColor);
+}
+
+.wrapper {
+  max-width: 1536px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+@media screen and (max-width: 1536px) {
+  .wrapper {
+    max-width: 1366px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .wrapper {
+    max-width: 1024px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .wrapper {
+    max-width: 768px;
+    padding: 0 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    max-width: 640px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .wrapper {
+    max-width: 475px;
+  }
+}
+
+.ql-container {
+  font-size: 28px !important;
+}
+
+.quill > .ql-container > .ql-editor.ql-blank::before {
+  color: #b3b3b1;
+} */

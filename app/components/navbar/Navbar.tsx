@@ -41,7 +41,7 @@ const Navbar = () => {
       </div>
       <div
         className={`absolute top-0 bottom-0 w-11/12 bg-blue md:-right-full ${
-          sidebarOpen ? "right-0" : "-right-full"
+          sidebarOpen ? "right-0" : "-right-full hidden"
         }`}
       >
         <button

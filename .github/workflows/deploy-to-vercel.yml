@@ -46,19 +46,9 @@ jobs:
       #     echo "GITHUB_CLIENT_ID=${{ secrets.GH_CLIENT_ID }}" >> .env
       #     echo "GITHUB_CLIENT_SECRET=${{ secrets.GH_CLIENT_SECRET }}" >> .env
 
-      # - name: Install dependencies
-      #   run: npm install
-
-      # - name: Generate Prisma schema
-      #   run: npx prisma generate
-
-      # - name: Build project
-      #   run: npm run build
-
       - uses: amondnet/vercel-action@v20 #deploy
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
           vercel-org-id: ${{ secrets.ORG_ID}} #Required
           vercel-project-id: ${{ secrets.PROJECT_ID}} #Required
           vercel-args: "--prod"
-          # working-directory: ./

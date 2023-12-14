@@ -19,11 +19,23 @@ jobs:
           envVariableKeys: DATABASE_URL,NEXTAUTH_URL,GOOGLE_CLIENT_ID,GOOGLE_CLIENT_SECRET,GITHUB_CLIENT_ID,GITHUB_CLIENT_SECRET
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          TARGET_DATABASE_URL: preview,development,production
+          TYPE_DATABASE_URL: encrypted
           NEXTAUTH_URL: https://gdg-blog.vercel.app
+          TARGET_NEXTAUTH_URL: preview,development,production
+          TYPE_NEXTAUTH_URL: encrypted
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          TARGET_GOOGLE_CLIENT_ID: preview,development,production
+          TYPE_GOOGLE_CLIENT_ID: encrypted
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          TARGET_GOOGLE_CLIENT_SECRET: preview,development,production
+          TYPE_GOOGLE_CLIENT_SECRET: encrypted
           GITHUB_CLIENT_ID: ${{ secrets.GH_CLIENT_ID }}
+          TARGET_GITHUB_CLIENT_ID: preview,development,production
+          TYPE_GITHUB_CLIENT_ID: encrypted
           GITHUB_CLIENT_SECRET: ${{ secrets.GH_CLIENT_SECRET }}
+          TARGET_GITHUB_CLIENT_SECRET: preview,development,production
+          TYPE_GITHUB_CLIENT_SECRET: encrypted
 
       # - name: Create .env file
       #   run: |

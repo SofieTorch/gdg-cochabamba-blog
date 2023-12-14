@@ -1,6 +1,6 @@
 import { Category, Post, User } from "@prisma/client";
 
-const BASE_URL = "http://localhost:3000/api";
+const BASE_URL = `${process.env.NEXTAUTH_URL}/api`;
 
 export interface ExtendedPost extends Post {
   author: User;

@@ -15,13 +15,17 @@
     "@mdxeditor/editor": "^1.13.5",
     "@prisma/client": "^5.7.0",
     "autoprefixer": "^9.8.8",
+    "cloudinary": "^1.41.0",
+    "file-system": "^2.2.2",
     "next": "^14.0.4",
     "next-auth": "^4.24.5",
     "postcss": "^7.0.39",
     "react": "^18",
     "react-dom": "^18",
     "react-markdown": "^9.0.1",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
+    "tinify": "^1.7.1",
+    "tls": "^0.0.1"
   },
   "devDependencies": {
     "@types/node": "^20",

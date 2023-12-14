@@ -25,30 +25,47 @@
     0 0, 0 0;
 }
 
+.bg-green-pattern {
+  background-color: #34a853;
+  background-image: linear-gradient(white 0.125rem, transparent 0.125rem),
+    linear-gradient(90deg, white 0.125rem, transparent 0.125rem),
+    linear-gradient(90deg, white 0.125rem, transparent 0.125rem),
+    linear-gradient(white 0.125rem, transparent 0.125rem),
+    radial-gradient(circle, transparent 3rem, #34a853 3rem),
+    radial-gradient(circle, transparent 2.875rem, white 2.875rem);
+  background-size: 6rem 6rem;
+  background-position: 2.85rem 2.85rem, 2.85rem 2.85rem, 6rem 6rem, 6rem 6rem,
+    0 0, 0 0;
+}
+
 .btn-primary {
   @apply bg-blue rounded-full px-4 py-2 text-white flex flex-row space-x-2 items-center;
 }
 
 /* .blog-post { */
-h1 {
+.post-page h1 {
   @apply font-bold text-4xl;
 }
 
-h2 {
+.post-page h2 {
   @apply font-semibold text-3xl;
 }
 
-h3 {
+.post-page h3 {
   @apply font-semibold text-2xl;
 }
 
-h4 {
+.post-page h4 {
   @apply font-semibold text-xl;
 }
 /* } */
 
 ._contentEditable_utjas_351 {
   @apply p-4 rounded-md;
+}
+
+.post-page a {
+  @apply text-blue underline;
 }
 
 /* :root {

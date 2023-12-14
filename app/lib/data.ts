@@ -73,9 +73,29 @@ export const getPosts = async (categoryId?: string): Promise<Post[]> => {
     }
 
     const posts = await response.json();
+    console.log(posts);
     return posts;
   } catch (error) {
     console.log(error);
     throw new Error("Failed to fetch posts");
+  }
+};
+
+export const uploadToCloudinary = async (
+  file: string | Blob
+): Promise<string> => {
+  const formData = new FormData();
+  formData.append("file", file);
+
+  try {
+    const response = await fetch(`${BASE_URL}/upload`, {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+    return data.url;
+  } catch (error) {
+    throw new Error("Failed to upload");
   }
 };

@@ -28,8 +28,8 @@ const Navbar = () => {
             <Link href="/" className="hover:underline">
               Inicio
             </Link>
-            <Link href="/about" className="hover:underline">
-              Sobre nosotros
+            <Link href="/blog" className="hover:underline">
+              Blog
             </Link>
 
             {/* <Toggle /> */}

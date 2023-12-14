@@ -16,16 +16,13 @@ const SinglePage = async ({ params: { slug } }: SinglePageProps) => {
   const post = await getSinglePost(slug);
 
   return (
-    <div className="max-w-3xl mx-auto my-6">
+    <div className="max-w-3xl w-3xl mx-auto my-6 post-page flex flex-col">
       <h1 className="mb-4 text-5xl font-bold">{post?.title}</h1>
       <hr />
       <div className="flex flex-row space-x-4 my-6">
         {post?.author?.image && (
           <div className={styles.userImageContainer}>
             <Image
-              // src={
-              //   "https://lh3.googleusercontent.com/a/ACg8ocJZJ89wGhnPGsRaOGKAL2JOBik9nX81bczo3PtqFkR4iy0=s96-c"
-              // }
               src={post.author.image}
               alt=""
               fill
@@ -45,11 +42,16 @@ const SinglePage = async ({ params: { slug } }: SinglePageProps) => {
           </span>
         </div>
       </div>
-      {/* {post?.img && (
-          <div className={styles.imageContainer}>
-            <Image src={post.img} alt="" fill className={styles.image} />
-          </div>
-        )} */}
+      <div className="relative w-full aspect-square h-96 mb-6">
+        {post?.cover && (
+          <Image
+            src={post.cover}
+            alt=""
+            fill
+            className="object-center object-contain"
+          />
+        )}
+      </div>
 
       <div className="flex flex-col space-y-2.5">
         <Markdown>{post?.content}</Markdown>

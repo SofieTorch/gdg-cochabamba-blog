@@ -30,9 +30,21 @@ export const GET = async (request: Request): Promise<Response> => {
     const { searchParams } = new URL(request.url);
     const categoryId = searchParams.get("category");
 
+    const page = parseInt(searchParams.get("page") ?? "1", 10);
+    const limit = parseInt(searchParams.get("limit") ?? "4", 10);
+    const offset = (page - 1) * limit;
+
+    const query = {
+      take: limit,
+      skip: offset,
+      ...(categoryId && { where: { categoryIds: { hasSome: [categoryId] } } }),
+    };
+
     const posts = await db.post.findMany({
-      skip: 0,
-      where: { ...(categoryId && { categoryIds: { has: categoryId } }) },
+      ...query,
+      orderBy: {
+        createdAt: "desc",
+      },
     });
 
     return new Response(JSON.stringify(posts));

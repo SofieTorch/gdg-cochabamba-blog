@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./SinglePage.module.css";
 import Menu from "@/app/components/menu/Menu";
 import { getSinglePost } from "@/app/lib/data";
+import Comments from "@/app/components/comments/Comments";
 
 interface SinglePageProps {
   params: {
@@ -59,6 +60,7 @@ const SinglePage = async ({ params: { slug } }: SinglePageProps) => {
         </div>
         {/* <Menu /> */}
       </div>
+      <Comments postSlug={post?.slug ?? ""} />
     </div>
   );
 };

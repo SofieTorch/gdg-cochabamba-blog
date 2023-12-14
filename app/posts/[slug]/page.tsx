@@ -34,7 +34,7 @@ const SinglePage = async ({ params: { slug } }: SinglePageProps) => {
           <h4>{post?.author?.name}</h4>
           <span>
             {post?.createdAt &&
-              new Date(post.createdAt).toLocaleDateString("en-US", {
+              new Date(post.createdAt).toLocaleDateString("es", {
                 year: "numeric",
                 month: "long",
                 day: "numeric",

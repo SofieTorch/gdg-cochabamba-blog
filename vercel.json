@@ -3,5 +3,5 @@
     "enabled": false
   },
   "framework": "nextjs",
-  "buildCommand": "prisma generate && prisma migrate deploy && next build"
+  "buildCommand": "prisma generate && prisma db push && next build"
 }

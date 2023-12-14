@@ -1,7 +1,5 @@
 import { Category, Post, User } from "@prisma/client";
 
-const BASE_URL = `${process.env.NEXTAUTH_URL}/api`;
-
 export interface ExtendedPost extends Post {
   author: User;
 }
@@ -10,7 +8,7 @@ export const getSinglePost = async (
   slug: string
 ): Promise<ExtendedPost | null> => {
   try {
-    const response = await fetch(`${BASE_URL}/posts/${slug}`, {
+    const response = await fetch(`api/posts/${slug}`, {
       method: "GET",
       cache: "no-store",
     });
@@ -29,7 +27,8 @@ export const getSinglePost = async (
 
 export const getCategories = async (): Promise<Category[]> => {
   try {
-    const response = await fetch(`${BASE_URL}/categories`);
+    const response = await fetch(`api/categories`);
+
     if (!response.ok) {
       throw new Error("Failed to fetch categories");
     }
@@ -43,7 +42,7 @@ export const getCategories = async (): Promise<Category[]> => {
 
 export const createPost = async (post: any): Promise<Post> => {
   try {
-    const response = await fetch(`${BASE_URL}/posts`, {
+    const response = await fetch(`api/posts`, {
       method: "POST",
       body: JSON.stringify(post),
     });

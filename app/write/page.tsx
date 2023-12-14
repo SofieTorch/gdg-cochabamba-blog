@@ -21,7 +21,7 @@ const Write = () => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [title, setTitle] = useState<string>("Título para tu nuevo gran post");
   const contentRef = useRef<MDXEditorMethods>(null);
-  const router = useRouter();
+  // const router = useRouter();
 
   useEffect(() => {
     getCategories().then(setCategories);
@@ -45,7 +45,7 @@ const Write = () => {
       categoryIds: selectedCategories,
       slug: slugify(title),
     }).then((post: Post) => {
-      router.push(`/posts/${post.slug}`);
+      // router.push(`/posts/${post.slug}`);
     });
   };
 

@@ -19,11 +19,11 @@ jobs:
           echo "GITHUB_CLIENT_ID=${{ secrets.GH_CLIENT_ID }}" >> .env
           echo "GITHUB_CLIENT_SECRET=${{ secrets.GH_CLIENT_SECRET }}" >> .env
 
-      # - name: Install dependencies
-      #   run: npm install
+      - name: Install dependencies
+        run: npm install
 
-      # - name: Build project
-      #   run: npm run build
+      - name: Build project
+        run: npm run build
 
       - uses: amondnet/vercel-action@v20 #deploy
         with:

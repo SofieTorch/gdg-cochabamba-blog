@@ -21,9 +21,15 @@ jobs:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
           TARGET_DATABASE_URL: preview,development,production
           TYPE_DATABASE_URL: encrypted
+          NEXTAUTH_SECRET: d7a9fb01c2ac5395c8f6a7bc341a0eea
+          TARGET_NEXTAUTH_SECRET: preview,development,production
+          TYPE_NEXTAUTH_SECRET: encrypted
           NEXTAUTH_URL: https://gdg-blog.vercel.app
           TARGET_NEXTAUTH_URL: preview,development,production
           TYPE_NEXTAUTH_URL: encrypted
+          NEXT_PUBLIC_BASE_URL: https://gdg-blog.vercel.app/api
+          TARGET_NEXT_PUBLIC_BASE_URL: preview,development,production
+          TYPE_NEXT_PUBLIC_BASE_URL: encrypted
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
           TARGET_GOOGLE_CLIENT_ID: preview,development,production
           TYPE_GOOGLE_CLIENT_ID: encrypted

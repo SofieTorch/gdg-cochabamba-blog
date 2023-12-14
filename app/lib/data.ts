@@ -1,5 +1,7 @@
 import { Category, Post, User } from "@prisma/client";
 
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+
 export interface ExtendedPost extends Post {
   author: User;
 }
@@ -8,7 +10,7 @@ export const getSinglePost = async (
   slug: string
 ): Promise<ExtendedPost | null> => {
   try {
-    const response = await fetch(`api/posts/${slug}`, {
+    const response = await fetch(`${BASE_URL}/posts/${slug}`, {
       method: "GET",
       cache: "no-store",
     });
@@ -27,7 +29,7 @@ export const getSinglePost = async (
 
 export const getCategories = async (): Promise<Category[]> => {
   try {
-    const response = await fetch(`api/categories`);
+    const response = await fetch(`${BASE_URL}/categories`);
 
     if (!response.ok) {
       throw new Error("Failed to fetch categories");
@@ -42,7 +44,7 @@ export const getCategories = async (): Promise<Category[]> => {
 
 export const createPost = async (post: any): Promise<Post> => {
   try {
-    const response = await fetch(`api/posts`, {
+    const response = await fetch(`${BASE_URL}/posts`, {
       method: "POST",
       body: JSON.stringify(post),
     });
@@ -55,5 +57,25 @@ export const createPost = async (post: any): Promise<Post> => {
     return createdPost;
   } catch (error) {
     throw new Error("Failed to create post");
+  }
+};
+
+export const getPosts = async (categoryId?: string): Promise<Post[]> => {
+  let query = "";
+  if (categoryId) {
+    query = new URLSearchParams({ category: categoryId }).toString();
+  }
+
+  try {
+    const response = await fetch(`${BASE_URL}/posts?${query}`);
+    if (!response.ok) {
+      throw new Error("Failed to fetch posts");
+    }
+
+    const posts = await response.json();
+    return posts;
+  } catch (error) {
+    console.log(error);
+    throw new Error("Failed to fetch posts");
   }
 };

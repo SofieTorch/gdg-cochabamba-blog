@@ -24,3 +24,25 @@ export const POST = async (req: Request): Promise<Response> => {
     });
   }
 };
+
+export const GET = async (request: Request): Promise<Response> => {
+  try {
+    const { searchParams } = new URL(request.url);
+    const categoryId = searchParams.get("category");
+
+    const posts = await db.post.findMany({
+      skip: 0,
+      where: { ...(categoryId && { categoryIds: { has: categoryId } }) },
+    });
+
+    return new Response(JSON.stringify(posts));
+  } catch (error) {
+    console.error(error);
+    return new Response(
+      JSON.stringify({ error: "Something went wrong when retrieving posts!" }),
+      {
+        status: 500,
+      }
+    );
+  }
+};

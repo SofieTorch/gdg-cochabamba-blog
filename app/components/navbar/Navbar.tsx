@@ -5,7 +5,6 @@ import AuthLinks from "../auth-links/AuthLinks";
 import Toggle from "../toggle/Toggle";
 import Icon from "@mdi/react";
 import { mdiClose, mdiMenu } from "@mdi/js";
-import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -14,16 +13,22 @@ const Navbar = () => {
     <>
       <div className="sticky bg-white w-full flex flex-row items-center justify-between p-2 md:p-4">
         <Link href="/" className="">
-          GDG Cochabamba's Blog
+          <div className="flex flex-row items-center space-x-2">
+            <img
+              src="/gdg-logo.png"
+              alt="GDG Logo"
+              className="h-4 w-auto bg-white"
+            />
+            <span>GDG Cochabamba's Blog</span>
+          </div>
         </Link>
 
-        {/* <div className={styles.menu}> */}
         <div className="flex flex-row justify-end space-x-4">
           <div className="hidden md:flex flex-row space-x-4 items-center justify-end">
-            <Link href="/" className={styles.link}>
+            <Link href="/" className="hover:underline">
               Inicio
             </Link>
-            <Link href="/about" className={styles.link}>
+            <Link href="/about" className="hover:underline">
               Sobre nosotros
             </Link>
 

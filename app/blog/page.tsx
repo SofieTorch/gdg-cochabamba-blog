@@ -1,4 +1,3 @@
-import CardList from "../components/card-list/CardList";
 import Menu from "../components/menu/Menu";
 import styles from "./Blog.module.css";
 import { Suspense } from "react";
@@ -18,9 +17,9 @@ const BlogPage = ({ searchParams }: BlogPageProps) => {
     <div className={styles.container}>
       <h1 className={styles.title}>{cat} Blog</h1>
       <div className={styles.content}>
-        <Suspense fallback={<div>Loading...</div>}>
+        {/* <Suspense fallback={<div>Loading...</div>}>
           <CardList page={page} cat={cat} />
-        </Suspense>
+        </Suspense> */}
         <Menu />
       </div>
     </div>

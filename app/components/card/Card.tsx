@@ -6,7 +6,11 @@ import { Post } from "@prisma/client";
 import Markdown from "react-markdown";
 
 const Card = ({ post }: { post: Post }) => {
-  const contentLimit = post.cover.trim().length > 0 ? 80 : 240;
+  const contentLimit = post.cover
+    ? post.cover.trim().length > 0
+      ? 80
+      : 240
+    : 240;
 
   return (
     <div className="max-w-sm border rounded-lg p-4 m-4">

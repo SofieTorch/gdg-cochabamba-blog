@@ -2,5 +2,6 @@
   "github": {
     "enabled": false
   },
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "buildCommand": "prisma generate && prisma migrate deploy && next build"
 }
